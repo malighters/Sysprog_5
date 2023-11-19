@@ -6,12 +6,22 @@ from src.lex import tokens
 precedence = (
     ('left', 'PLUS', 'MINUS'),
     ('left', 'MULTIPLY', 'DIVIDE'),
-    ('nonassoc', 'UMINUS'),
+    ('right', 'UMINUS'),
     ('left', 'POWER'),
 )
 
 var = {}
 
+
+def p_statements(p):
+    '''
+        statements : statement DIVIDER statements
+                   | statement
+    '''
+    if len(p) == 4:
+        p[0] = [p[1]] + p[3]
+    else:
+        p[0] = [p[1]]
 
 def p_statement(p):
     '''

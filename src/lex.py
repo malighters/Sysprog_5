@@ -11,6 +11,7 @@ tokens = (
     'POWER',         # ^
     'IDENTIFIER',    # names for variables
     'EQUALS',        # =
+    'DIVIDER'        # ,
 )
 
 # Regex patterns
@@ -22,6 +23,7 @@ t_LPARENTHESIS = r'\('
 t_RPARENTHESIS = r'\)'
 t_POWER = r'\^'
 t_EQUALS = r'='
+t_DIVIDER = r','
 
 
 def t_IDENTIFIER(t):

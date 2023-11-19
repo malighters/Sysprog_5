@@ -15,7 +15,10 @@ def main():
         if not s:
             continue
         result = parser.parse(s)
+        if len(result) == 1:
+            result = result[0]
         print('Результат виконання:', result, '\n')
+
 
 
 if __name__ == '__main__':
