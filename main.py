@@ -2,7 +2,7 @@ from src.yacc import parser
 
 
 def main():
-    print('Лаб 5. Lex/Yacc-парсер \nВиконано студентом групи ТТП-32 Черненко Євгенієм')
+    print('Лаб 5. Lex/Yacc-парсер \nВиконав студент групи ТТП-32 Черненко Євгеній')
     while True:
         try:
             s = input('Вираз: ')
@@ -15,7 +15,7 @@ def main():
         if not s:
             continue
         result = parser.parse(s)
-        if len(result) == 1:
+        if result is not None and len(result) == 1:
             result = result[0]
         print('Результат виконання:', result, '\n')
 
